@@ -1,21 +1,19 @@
 //
-//  ViewController.swift
+//  PostModel.swift
 //  SwiftRequests
 //
 //  Created by Ильдар Залялов on 26/11/2018.
 //  Copyright © 2018 Ильдар Залялов. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class ViewController: UIViewController {
+struct PostModel: Codable {
+    
+    var userId: Int
+    var id: Int
+    var title: String
+    var body: String
 
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
-    }
 }
-
