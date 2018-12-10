@@ -43,7 +43,6 @@ class UserViewController: UIViewController {
         vkManager = VKManager.sharedInstance
         dataManager = DataManager.sharedInstance
         requestManager = RequestManager.sharedInstance
-    
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -29,9 +29,6 @@ class RegistrationViewController: UIViewController {
             self.welcomeLabel.alpha = 1
             self.loginButton.alpha = 1
         }
-        
     }
-    
-    @IBAction func unwindToVC1(segue:UIStoryboardSegue) { }
 
 }

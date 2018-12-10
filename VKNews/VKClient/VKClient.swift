@@ -17,5 +17,4 @@ class VKClient: Codable {
         self.accessToken = accessToken
         self.userId = userId
     }
-    
 }

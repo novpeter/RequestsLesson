@@ -16,9 +16,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     var vkManager: VKManager!
     var requestManager: RequestManagerProtocol!
     
-    let cellSpacingHeight: CGFloat = 5
-    let estimatedRowHeight = 150
-    
     var currentPosts: [Post]!
     
     lazy var refreshControl: UIRefreshControl = {
@@ -96,10 +93,3 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
 }
-
-//extension UIScrollView {
-//    func scrollToTop() {
-//        let desiredOffset = CGPoint(x: 0, y: -contentInset.top)
-//        setContentOffset(desiredOffset, animated: true)
-//    }
-//}

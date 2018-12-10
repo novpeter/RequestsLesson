@@ -28,7 +28,7 @@ public class Post: NSManagedObject {
         self.sourceName = group?.name
         self.sourceAvatar = group?.photo
         self.attachedImage = post.attachments?.filter({ (attachment) -> Bool in
-            attachment.type == "photo"
+            attachment.type == postType
         }).first?.photo?.link ?? nil
         
     }

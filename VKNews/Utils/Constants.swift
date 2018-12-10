@@ -7,15 +7,14 @@
 //
 
 import Foundation
+import UIKit
 
 // MARK: - Seques and identifiers
 
 enum Seques: String {
     case LoginSegue
     case NewsFeed
-    case DetailedPost
     case AuthSuccess
-    case StopAuth
 }
 
 let postIdentifier = "post"
@@ -23,6 +22,8 @@ let postIdentifier = "post"
 // MARK: - numeric constants
 
 let splashScreenDelay: Int = 2000
+let cellSpacingHeight: CGFloat = 5
+let estimatedRowHeight = 220
 
 // MARK: - string constants
 
@@ -37,6 +38,8 @@ enum PageTitles: String {
 let accessTokenParameter = "access_token"
 let userIdParameter = "user_id"
 
+let postType = "photo"
+
 // MARK: - Links
 
 enum VKLinks: String {
@@ -47,7 +50,7 @@ enum VKLinks: String {
     case getUserInfoOptions = "&fields=photo_100,screen_name,bdate,status,home_town,contacts&v=5.52"
     
     case getNewsfeedMethod = "newsfeed.get"
-    case getNewsfeedOptions = "&fields=name,photo_100&filters=post&count=20&return_banned=0&v=5.52"
+    case getNewsfeedOptions = "&fields=name,photo_100&filters=post&count=50&return_banned=0&v=5.52"
     
     case publishNewPostMethod = "wall.post"
     
@@ -65,7 +68,6 @@ enum ResponseCodingKeys: String {
 // MARK: - Others
 
 enum PostSource: String {
-    case Twitter = "twitter"
     case VK = "vk"
 }
 
@@ -88,6 +90,8 @@ let decodeError = NSError(
     code: 3,
     userInfo: [NSLocalizedDescriptionKey: "Can't decode data"]
 )
+
+// MARK: - Functions
 
 func abs(number: Int) -> Int {
     if number < 0 {

@@ -19,6 +19,9 @@ class VKManager {
     
     private init() { }
     
+    /// Creates client from credentials and save
+    ///
+    /// - Parameter credentials: client credentials
     func createAndSaveClient(credentials: [String:String]) {
 
         if let token = credentials[accessTokenParameter], let user = credentials[userIdParameter] {
@@ -28,6 +31,9 @@ class VKManager {
         }
     }
     
+    /// Updates info of current user
+    ///
+    /// - Parameter completionBlock: returns response
     func updateUserInfo(completionBlock: @escaping (Response<VKUserResponse>) -> ()) {
         
         guard let client = dataManager.getClient(with: VKClient.self) else { return }
@@ -42,6 +48,7 @@ class VKManager {
         requestManager.fetchRequest(with: urlRequest, decodeType: VKUserResponse.self, completionBlock: completionBlock)
     }
     
+    /// Deletes old user
     private func deleteOldUser() {
         
         if let users = dataManager.getAll(with: User.self) {
@@ -56,6 +63,9 @@ class VKManager {
         }
     }
     
+    /// Updates all posts
+    ///
+    /// - Parameter completionBlock: returns new posts
     func updatePosts(completionBlock: @escaping ([Post]) -> ()) {
         
         guard let client = dataManager.getClient(with: VKClient.self) else { return }
@@ -81,7 +91,9 @@ class VKManager {
                 
                 if let posts = data.response?.items, let groups = data.response?.groups {
                     
-                    for post in posts {
+                    for post in posts.filter({ (post) -> Bool in
+                        !post.text.isEmpty && post.attachments?.filter({$0.type == postType}).count ?? 0 > 0
+                    }) {
                         
                         let group = groups.filter { $0.id == abs(post.sourceId) }.first
                         resultPosts.append(Post(context: self.dataManager.context, post: post, group: group))
@@ -104,6 +116,7 @@ class VKManager {
         
     }
     
+    /// Deletes old posts
     private func deleteOldPosts() {
         
         if let posts = dataManager.getAll(with: Post.self) {
@@ -118,6 +131,11 @@ class VKManager {
         }
     }
 
+    /// Publishes new post on user wall
+    ///
+    /// - Parameters:
+    ///   - message: text of post
+    ///   - completionBlock: return result of publishing
     func publishNewPost(with message: String, completionBlock: @escaping (Bool) -> ()) {
         
         guard let client = dataManager.getClient(with: VKClient.self) else { return }
@@ -140,6 +158,11 @@ class VKManager {
         }
     }
     
+    /// Likes given post
+    ///
+    /// - Parameters:
+    ///   - post: post
+    ///   - completionBlock: returns current like's count
     func likePost(with post: Post, completionBlock: @escaping (Int?) -> ()) {
         
         guard let client = dataManager.getClient(with: VKClient.self) else { return }
@@ -165,6 +188,11 @@ class VKManager {
         }
     }
     
+    /// Dislikes given post
+    ///
+    /// - Parameters:
+    ///   - post: post
+    ///   - completionBlock: returns current like's count
     func dislikePost(with post: Post, completionBlock: @escaping (Int?) -> ()) {
         
         guard let client = dataManager.getClient(with: VKClient.self) else { return }
@@ -182,7 +210,6 @@ class VKManager {
             
             switch response {
             case .success(let data):
-                print("Likes count : \(data.response.likes)")
                 completionBlock(data.response.likes)
             case .failure(let error):
                 print("Error: \(error.localizedDescription)")

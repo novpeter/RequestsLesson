@@ -52,6 +52,6 @@ class AuthWebViewController: UIViewController, WKNavigationDelegate {
     }
 
     @IBAction func stopButtonPressed(_ sender: Any) {
-        performSegue(withIdentifier: Seques.StopAuth.rawValue, sender: self)
+        dismiss(animated: true, completion: nil)
     }
 }

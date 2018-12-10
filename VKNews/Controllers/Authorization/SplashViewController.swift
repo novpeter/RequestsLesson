@@ -17,7 +17,6 @@ class SplashViewController: UIViewController {
         super.viewDidLoad()
 
         dataManager = DataManager.sharedInstance
-        vkManager = VKManager.sharedInstance
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -28,10 +27,6 @@ class SplashViewController: UIViewController {
             guard let self = self else { return }
                 
             if let _ = self.dataManager.getClient(with: VKClient.self) {
-                
-//                self.vkManager.updateUserInfo()
-//                self.vkManager.updatePosts()
-                
                 self.performSegue(withIdentifier: Seques.NewsFeed.rawValue, sender: self)
             }
             else {

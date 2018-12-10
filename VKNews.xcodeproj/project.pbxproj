@@ -19,7 +19,6 @@
 		4B3B9D6A21B17502009AE973 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3B9D6921B17502009AE973 /* SplashViewController.swift */; };
 		4B3B9D6C21B19497009AE973 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3B9D6B21B19497009AE973 /* RegistrationViewController.swift */; };
 		4B3B9D6F21B27819009AE973 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3B9D6E21B27819009AE973 /* Constants.swift */; };
-		4B43B0FD21B7BD17000CEE28 /* ClientManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B43B0FC21B7BD17000CEE28 /* ClientManagerProtocol.swift */; };
 		4B5C333621B2FE2C00886419 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5C333521B2FE2C00886419 /* TabViewController.swift */; };
 		4B5C333821B2FF8000886419 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5C333721B2FF8000886419 /* SettingsViewController.swift */; };
 		4B5C333A21B2FF9300886419 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5C333921B2FF9300886419 /* UserViewController.swift */; };
@@ -57,7 +56,6 @@
 		4B3B9D6921B17502009AE973 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		4B3B9D6B21B19497009AE973 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		4B3B9D6E21B27819009AE973 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		4B43B0FC21B7BD17000CEE28 /* ClientManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientManagerProtocol.swift; sourceTree = "<group>"; };
 		4B5C333521B2FE2C00886419 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		4B5C333721B2FF8000886419 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4B5C333921B2FF9300886419 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
@@ -115,7 +113,6 @@
 				4B3B9D5F21B1674C009AE973 /* DataManager */,
 				4B3B9D6021B167A6009AE973 /* RequestManager */,
 				4B5C334221B3173500886419 /* VKClient */,
-				4B68876C21B682DE00B47920 /* Settings */,
 				4B9D2EE821BA5F30005B0F3C /* Protocols */,
 				4B3B9D6D21B27800009AE973 /* Utils */,
 				4B3B9D4921B166AA009AE973 /* AppDelegate.swift */,
@@ -178,13 +175,6 @@
 			path = VKClient;
 			sourceTree = "<group>";
 		};
-		4B68876C21B682DE00B47920 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Settings;
-			sourceTree = "<group>";
-		};
 		4B964EB321B54FF700A08639 /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,7 +208,6 @@
 		4B9D2EE821BA5F30005B0F3C /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				4B43B0FC21B7BD17000CEE28 /* ClientManagerProtocol.swift */,
 				4B9D2EE621BA5E2A005B0F3C /* UserProtocol.swift */,
 				4B9D2EF321BA8D64005B0F3C /* PostProtocol.swift */,
 				4BBEA2FA21BE6EFA009635BD /* GroupProtocol.swift */,
@@ -312,7 +301,6 @@
 				4B5C333C21B302F600886419 /* FeedViewController.swift in Sources */,
 				4B3B9D6F21B27819009AE973 /* Constants.swift in Sources */,
 				4BC8CEBD21BAFEED004DF6EA /* User+CoreDataProperties.swift in Sources */,
-				4B43B0FD21B7BD17000CEE28 /* ClientManagerProtocol.swift in Sources */,
 				4B70B6C321B582F100722FC2 /* VKClient.swift in Sources */,
 				4B964EB221B54FD900A08639 /* AuthWebViewController.swift in Sources */,
 				4B9D2EE721BA5E2A005B0F3C /* UserProtocol.swift in Sources */,

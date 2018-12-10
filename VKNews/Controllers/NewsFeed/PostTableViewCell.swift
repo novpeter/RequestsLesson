@@ -36,6 +36,7 @@ class PostTableViewCell: UITableViewCell {
         sourceNameLabel.text = nil
         avatarImageView.image = nil
         likeButton.setImage(UIImage(named: "like_icon"), for: .normal)
+        attachedImage.isHidden = false
         likeButton.setTitle(nil, for: .normal)
         commentButton.setTitle(nil, for: .normal)
         repostButton.setTitle(nil, for: .normal)
