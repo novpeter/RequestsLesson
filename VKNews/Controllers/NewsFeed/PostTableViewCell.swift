@@ -52,6 +52,23 @@ class PostTableViewCell: UITableViewCell {
             likeButton.setImage(UIImage(named: "like_icon"), for: .normal)
             configureButton(button: likeButton, title: String(describing: post!.likesCount))
             
+            vkManager.dislikePost(with: post) { [weak self] (likesCount) in
+                
+                guard let self = self else { return }
+                
+                if let likesCount = likesCount {
+                    self.post.likesCount = Int64(likesCount)
+                    self.configureButton(button: self.likeButton, title: String(describing: self.post!.likesCount))
+                }
+                else {
+                    self.post.likesCount = self.post.likesCount + 1
+                    self.post.userLikes = 1
+                    self.likeButton.setImage(UIImage(named: "user_likes_icon"), for: .normal)
+                    self.configureButton(button: self.likeButton, title: String(describing: self.post!.likesCount))
+                }
+                self.dataManager.saveContext()
+            }
+            
         }
         else {
             post.likesCount = post.likesCount + 1

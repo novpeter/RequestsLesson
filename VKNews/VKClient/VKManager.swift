@@ -150,8 +150,32 @@ class VKManager {
         let itemId = "&item_id=\(post.postId)"
         
         let urlString = api + VKLinks.likePostMethod.rawValue + accessToken + type + ownerId + itemId + VKLinks.versionOption.rawValue
-        print(urlString)
-        let url = URL(string: urlString.replacingOccurrences(of: " ", with: "_"))
+        let url = URL(string: urlString)
+        let urlRequest = URLRequest(url: url!)
+        
+        requestManager.fetchRequest(with: urlRequest, decodeType: LikePostResponse.self) { (response) in
+            
+            switch response {
+            case .success(let data):
+                completionBlock(data.response.likes)
+            case .failure(let error):
+                print("Error: \(error.localizedDescription)")
+                completionBlock(nil)
+            }
+        }
+    }
+    
+    func dislikePost(with post: Post, completionBlock: @escaping (Int?) -> ()) {
+        
+        guard let client = dataManager.getClient(with: VKClient.self) else { return }
+        
+        let accessToken = "?access_token=\(client.accessToken)"
+        let type = "&type=post"
+        let ownerId = "&owner_id=\(post.sourceId)"
+        let itemId = "&item_id=\(post.postId)"
+        
+        let urlString = api + VKLinks.dislikePostMethod.rawValue + accessToken + type + ownerId + itemId + VKLinks.versionOption.rawValue
+        let url = URL(string: urlString)
         let urlRequest = URLRequest(url: url!)
         
         requestManager.fetchRequest(with: urlRequest, decodeType: LikePostResponse.self) { (response) in

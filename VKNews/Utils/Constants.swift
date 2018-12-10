@@ -54,6 +54,7 @@ enum VKLinks: String {
     case versionOption = "&v=5.52"
     
     case likePostMethod = "likes.add"
+    case dislikePostMethod = "likes.delete"
 }
 
 enum ResponseCodingKeys: String {
