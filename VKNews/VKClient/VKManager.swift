@@ -146,8 +146,8 @@ class VKManager {
         
         let accessToken = "?access_token=\(client.accessToken)"
         let type = "&type=post"
-        let ownerId = "&owner_id=\(abs(post.sourceId))"
-        let itemId = "&item_id=\(abs(post.postId))"
+        let ownerId = "&owner_id=\(post.sourceId)"
+        let itemId = "&item_id=\(post.postId)"
         
         let urlString = api + VKLinks.likePostMethod.rawValue + accessToken + type + ownerId + itemId + VKLinks.versionOption.rawValue
         print(urlString)
