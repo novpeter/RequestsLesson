@@ -83,32 +83,10 @@ struct Reposts: Codable {
     }
 }
 
-//class VKPostResult: PostProtocol {
-//    
-//    var postId: Int
-//    var sourceId: Int
-//    var date: Int
-//    var text: String
-//    var sourceLabel: String
-//    var sourceAvatar: Data
-//    var attachedImage: Data?
-//    var commentsCount: Int
-//    var likesCount: Int
-//    var userLikes: Int
-//    var repostsCount: Int
-//    
-//    init(postId: Int, sourceId: Int, date: Int, text: String, sourceLabel: String, sourceAvatar: Data, attachedImage: Data?, commentsCount: Int, likesCount: Int, userLikes: Int, repostsCount: Int) {
-//        
-//        self.postId = postId
-//        self.sourceId = sourceId
-//        self.date = date
-//        self.text = text
-//        self.sourceLabel = sourceLabel
-//        self.sourceAvatar = sourceAvatar
-//        self.attachedImage = attachedImage
-//        self.commentsCount = commentsCount
-//        self.userLikes = userLikes
-//        self.likesCount = likesCount
-//        self.repostsCount = repostsCount
-//    }
-//}
+struct LikePostResponse: Codable {
+    var response: PostLikes
+}
+
+struct PostLikes: Codable{
+    var likes: Int
+}

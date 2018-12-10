@@ -41,7 +41,7 @@ let userIdParameter = "user_id"
 
 enum VKLinks: String {
     
-    case token = "https://oauth.vk.com/authorize?client_id=5490057&display=page&redirect_uri=https://oauth.vk.com/blank.html&scope=friends,offline,groups,wall&response_type=token&v=5.52"
+    case token = "https://oauth.vk.com/authorize?client_id=5490057&display=mobile&redirect_uri=https://oauth.vk.com/blank.html&scope=wall,friends,offline,groups&response_type=token&v=5.52"
     
     case getUserInfoMethod = "users.get"
     case getUserInfoOptions = "&fields=photo_100,screen_name,bdate,status,home_town,contacts&v=5.52"
@@ -50,7 +50,10 @@ enum VKLinks: String {
     case getNewsfeedOptions = "&fields=name,photo_100&filters=post&count=20&return_banned=0&v=5.52"
     
     case publishNewPostMethod = "wall.post"
-    case publishNewPostOptions = "&v=5.52"
+    
+    case versionOption = "&v=5.52"
+    
+    case likePostMethod = "likes.add"
 }
 
 enum ResponseCodingKeys: String {

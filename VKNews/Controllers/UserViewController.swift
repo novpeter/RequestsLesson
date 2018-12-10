@@ -109,6 +109,7 @@ class UserViewController: UIViewController {
                 
                 self.tabBarController?.navigationItem.title = PageTitles.User.rawValue
                 self.publishNewPostButton.isEnabled = true
+                self.newPostTextField.isUserInteractionEnabled = true
             }
         }
     }

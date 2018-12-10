@@ -123,9 +123,8 @@ class VKManager {
         guard let client = dataManager.getClient(with: VKClient.self) else { return }
         
         let accessToken = "?access_token=\(client.accessToken)"
-        let urlString = api + VKLinks.publishNewPostMethod.rawValue + accessToken + "?message=\(message)" + VKLinks.publishNewPostOptions.rawValue
-        print(urlString.replacingOccurrences(of: " ", with: "_"))
-        let url = URL(string: urlString.replacingOccurrences(of: " ", with: "_"))
+        let urlString = api + VKLinks.publishNewPostMethod.rawValue + accessToken + "&message=\(message)" + VKLinks.versionOption.rawValue
+        let url = URL(string: urlString.replacingOccurrences(of: " ", with: "%20"))
         let urlRequest = URLRequest(url: url!)
         
         requestManager.fetchRequest(with: urlRequest, decodeType: UserPostResponse.self) { (response) in
@@ -137,6 +136,33 @@ class VKManager {
             case .failure(let error):
                 print("Error: \(error.localizedDescription)")
                 completionBlock(false)
+            }
+        }
+    }
+    
+    func likePost(with post: Post, completionBlock: @escaping (Int?) -> ()) {
+        
+        guard let client = dataManager.getClient(with: VKClient.self) else { return }
+        
+        let accessToken = "?access_token=\(client.accessToken)"
+        let type = "&type=post"
+        let ownerId = "&owner_id=\(abs(post.sourceId))"
+        let itemId = "&item_id=\(abs(post.postId))"
+        
+        let urlString = api + VKLinks.likePostMethod.rawValue + accessToken + type + ownerId + itemId + VKLinks.versionOption.rawValue
+        print(urlString)
+        let url = URL(string: urlString.replacingOccurrences(of: " ", with: "_"))
+        let urlRequest = URLRequest(url: url!)
+        
+        requestManager.fetchRequest(with: urlRequest, decodeType: LikePostResponse.self) { (response) in
+            
+            switch response {
+            case .success(let data):
+                print("Likes count : \(data.response.likes)")
+                completionBlock(data.response.likes)
+            case .failure(let error):
+                print("Error: \(error.localizedDescription)")
+                completionBlock(nil)
             }
         }
     }
