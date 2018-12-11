@@ -155,11 +155,17 @@ class PostTableViewCell: UITableViewCell {
         applyStyles()
     }
 
+    /// Set title on button
+    ///
+    /// - Parameters:
+    ///   - button: UIButton
+    ///   - title: button title
     private func configureButton(button: UIButton, title: String?) {
         button.setTitle(" \(title ?? "0")", for: .normal)
     }
     
     
+    /// Apply styles
     private func applyStyles() {
         
         avatarImageView.layer.cornerRadius = avatarImageView.frame.width / 2

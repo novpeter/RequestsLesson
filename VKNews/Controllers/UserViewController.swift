@@ -89,6 +89,9 @@ class UserViewController: UIViewController {
         }
     }
     
+    /// Publish new text post on user's wall
+    ///
+    /// - Parameter sender: Any
     @IBAction func publishNewPostTextField(_ sender: Any) {
         
         newPostTextField.isUserInteractionEnabled = false
@@ -113,6 +116,7 @@ class UserViewController: UIViewController {
         }
     }
     
+    /// Configure the page
     private func configurePage() {
 
         nameLabel.text = "\(user.firstName!) \(user.lastName!)"
@@ -124,6 +128,12 @@ class UserViewController: UIViewController {
         configureLabel(label: townLabel, text: user.homeTown!, resultText: "town: \(user.homeTown!)")
     }
     
+    /// Configure given label. If text is empty - set it hidden
+    ///
+    /// - Parameters:
+    ///   - label: UILabel
+    ///   - text: text
+    ///   - resultText: label with text
     private func configureLabel(label: UILabel, text: String, resultText: String) {
     
         if text.isEmpty {
@@ -134,6 +144,7 @@ class UserViewController: UIViewController {
         }
     }
     
+    /// Apply styles
     private func applyStyles() {
         
         avatarImageView.layer.cornerRadius = avatarImageView.frame.width / 2
