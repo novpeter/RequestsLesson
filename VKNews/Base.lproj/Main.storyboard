@@ -394,9 +394,6 @@
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Log out"/>
-                                                <connections>
-                                                    <action selector="onLogOutButtonPressed:" destination="N3o-um-GGb" eventType="touchUpInside" id="YYj-Vk-ioW"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -620,6 +617,6 @@
         <image name="vk_logo" width="1024" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qVo-GL-5sl"/>
+        <segue reference="YeJ-en-T5u"/>
     </inferredMetricsTieBreakers>
 </document>
