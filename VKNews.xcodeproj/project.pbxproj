@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B0704B821BFAC2000B49FD2 /* Post+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0704B721BFAC2000B49FD2 /* Post+CoreDataProperties.swift */; };
 		4B1D7F2021B83868008AD64C /* VKPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1D7F1F21B83868008AD64C /* VKPost.swift */; };
 		4B3B9D4A21B166AA009AE973 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3B9D4921B166AA009AE973 /* AppDelegate.swift */; };
 		4B3B9D4F21B166AA009AE973 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B3B9D4D21B166AA009AE973 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B0704B721BFAC2000B49FD2 /* Post+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Post+CoreDataProperties.swift"; path = "VKNews/Entities/Post+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4B1D7F1F21B83868008AD64C /* VKPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKPost.swift; sourceTree = "<group>"; };
 		4B3B9D4621B166AA009AE973 /* VKNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B3B9D4921B166AA009AE973 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 		4BC8CEBE21BBD085004DF6EA /* PostResponseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostResponseProtocol.swift; sourceTree = "<group>"; };
 		4BC8CEC021BBD09C004DF6EA /* UserResponseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponseProtocol.swift; sourceTree = "<group>"; };
 		4BC8CED221BC3D96004DF6EA /* VKGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKGroup.swift; sourceTree = "<group>"; };
+		4BE3DFD821BEFDCA00582C49 /* VKNews v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "VKNews v2.xcdatamodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +95,7 @@
 		4B3B9D3D21B166AA009AE973 = {
 			isa = PBXGroup;
 			children = (
+				4B0704B721BFAC2000B49FD2 /* Post+CoreDataProperties.swift */,
 				4B3B9D4821B166AA009AE973 /* VKNews */,
 				4B3B9D4721B166AA009AE973 /* Products */,
 			);
@@ -311,6 +315,7 @@
 				4BC8CEC121BBD09C004DF6EA /* UserResponseProtocol.swift in Sources */,
 				4B1D7F2021B83868008AD64C /* VKPost.swift in Sources */,
 				4B3B9D6621B1683A009AE973 /* RequestManager.swift in Sources */,
+				4B0704B821BFAC2000B49FD2 /* Post+CoreDataProperties.swift in Sources */,
 				4B3B9D6221B1681A009AE973 /* DataManagerProtocol.swift in Sources */,
 				4BBEA2FB21BE6EFA009635BD /* GroupProtocol.swift in Sources */,
 				4B3B9D6421B16830009AE973 /* RequestManagerProtocol.swift in Sources */,
@@ -521,9 +526,10 @@
 		4B68877121B69EFA00B47920 /* VKNews.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				4BE3DFD821BEFDCA00582C49 /* VKNews v2.xcdatamodel */,
 				4B68877221B69EFA00B47920 /* VKNews.xcdatamodel */,
 			);
-			currentVersion = 4B68877221B69EFA00B47920 /* VKNews.xcdatamodel */;
+			currentVersion = 4BE3DFD821BEFDCA00582C49 /* VKNews v2.xcdatamodel */;
 			path = VKNews.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

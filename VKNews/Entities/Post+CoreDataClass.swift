@@ -30,7 +30,7 @@ public class Post: NSManagedObject {
         self.attachedImage = post.attachments?.filter({ (attachment) -> Bool in
             attachment.type == postType
         }).first?.photo?.link ?? nil
-        
+        self.markedAsAds = Int16(post.markedAsAds ?? 0)
     }
     
 }

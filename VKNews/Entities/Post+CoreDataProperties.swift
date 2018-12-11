@@ -2,7 +2,7 @@
 //  Post+CoreDataProperties.swift
 //  VKNews
 //
-//  Created by Петр on 10/12/2018.
+//  Created by Петр on 11/12/2018.
 //  Copyright © 2018 DreamTeam. All rights reserved.
 //
 //
@@ -17,7 +17,10 @@ extension Post {
         return NSFetchRequest<Post>(entityName: "Post")
     }
 
-    /// Count of comments
+    /// Attached image link
+    @NSManaged public var attachedImage: URL?
+    
+    /// Comments count
     @NSManaged public var commentsCount: Int64
     
     /// Date of publishing
@@ -35,22 +38,22 @@ extension Post {
     /// Count of reposts
     @NSManaged public var repostsCount: Int64
     
-    /// Source identificator
+    /// Source avatar image link
+    @NSManaged public var sourceAvatar: URL?
+    
+    /// Source id
     @NSManaged public var sourceId: Int64
     
-    /// Post text
+    /// Source name
+    @NSManaged public var sourceName: String?
+    
+    /// Text
     @NSManaged public var text: String?
     
     /// 1 - user liked, 0 - didn't like
     @NSManaged public var userLikes: Int16
     
-    /// Source name
-    @NSManaged public var sourceName: String?
-    
-    /// Source avatar link
-    @NSManaged public var sourceAvatar: URL?
-    
-    /// Attached post image
-    @NSManaged public var attachedImage: URL?
+    /// Is as adds
+    @NSManaged public var markedAsAds: Int16
 
 }

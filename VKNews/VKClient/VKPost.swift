@@ -20,6 +20,7 @@ struct Items: Codable {
 struct VKPost: PostProtocol {
     
     var type: String
+    var markedAsAds: Int?
     var postId: Int
     var sourceId: Int
     var date: Int
@@ -31,6 +32,7 @@ struct VKPost: PostProtocol {
     
     enum CodingKeys: String, CodingKey {
         case type
+        case markedAsAds = "marked_as_ads"
         case postId = "post_id"
         case sourceId = "source_id"
         case date

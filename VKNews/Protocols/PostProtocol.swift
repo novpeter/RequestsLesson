@@ -19,4 +19,5 @@ protocol PostProtocol: Codable {
     var comments: Comments? { get set }
     var likes: Likes? { get set }
     var reposts: Reposts? { get set }
+    var markedAsAds: Int? { get set }
 }
